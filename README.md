@@ -5,15 +5,18 @@ Dependencias
 ------------
 * MongoDB
 * NodeJS
-* Ruby (needed to install bundler and sass)
+* Ruby (se ocupa para instalar bundler y sass)
 
-How to install
---------------
+Como instarla localmente
+------------------------
 * gem install bundler
 * bundle install
 * npm install
 * bower install
 
-How to run it
+Como correrla
 -------------
-* npm start (open http://localhost:3000)
+* mongod (esto va iniciar mongo)
+* npm start (esto va iniciar el server)
+* para importar la base de datos, tenemos que abrir http://localhost:3000/importstations
+* para ver la app funcionando abrimos http://localhost:3000
