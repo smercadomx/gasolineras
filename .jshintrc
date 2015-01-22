@@ -1,0 +1,19 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"undef": true,
+	"camelcase": true,
+	"freeze": true,
+	"latedef": true,
+	"maxlen": 100,
+	"maxparams": 4,
+	"newcap": true,
+	"nonew": true,
+	"quotmark": "single",
+	"unused": true,
+	"node": true,
+	"browser": true,
+	"globals": {
+		"angular": true
+	}
+}
