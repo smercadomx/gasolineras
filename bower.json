@@ -1,7 +1,8 @@
 {
-	"name": "Gasolineras",
-	"dependencies": {
-		"angular": "~1.3.9",
-		"ui-router": "~0.2.13"
-	}
+  "name": "Gasolineras",
+  "dependencies": {
+    "angular": "~1.3.9",
+    "ui-router": "~0.2.13",
+    "swiftclick": "~1.1.5"
+  }
 }
