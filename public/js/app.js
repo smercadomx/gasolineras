@@ -22,6 +22,8 @@
 		$urlRouterProvider.otherwise('/home');
 	});
 
+	app.constant('API_URL', 'http://localhost:3000');
+
 	win.app            = app;
 	win.appControllers = appControllers;
 	win.appServices    = appServices;
