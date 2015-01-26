@@ -5,6 +5,7 @@
 		appControllers = angular.module('appControllers', []),
 		appServices    = angular.module('appServices', []);
 
+	// main config
 	app.config(function ($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('nearstations', {
