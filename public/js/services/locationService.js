@@ -1,4 +1,4 @@
-window.appServices.factory('location', ['$http', '$q', '$window', function ($http, $q, $window) {
+angular.module('app').factory('location', ['$http', '$q', '$window', function ($http, $q, $window) {
 	return {
 		getUserLocation: function () {
 			var deferred = $q.defer();

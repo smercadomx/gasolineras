@@ -1,4 +1,4 @@
-window.appServices.factory('stations', ['$http', '$q', 'API_URL', function ($http, $q, API_URL) {
+angular.module('app').factory('stations', ['$http', '$q', 'API_URL', function ($http, $q, API_URL) {
 	return {
 		getNearStations: function (latitude, longitude) {
 			var serviceUrl = API_URL + '/nearstations?longitude=' +

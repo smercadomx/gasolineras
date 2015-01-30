@@ -1,5 +1,5 @@
-window.appServices.factory('map', ['$http', '$q', function ($http, $q) {
-	var google = window.google;
+angular.module('app').factory('map', ['$http', '$q', '$window', function ($http, $q, $window) {
+	var google = $window.google;
 
 	function Map(mapDivElement, centerLocation) {
 		this.map = new google.maps.Map(mapDivElement, {

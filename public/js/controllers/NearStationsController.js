@@ -1,4 +1,4 @@
-window.appControllers.controller('NearStationsCtrl',
+angular.module('app').controller('NearStationsCtrl',
 	['$scope', 'stations', 'location', 'map', function ($scope, stations, location, Map) {
 
 	$scope.loading = true;
