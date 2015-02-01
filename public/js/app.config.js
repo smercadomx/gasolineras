@@ -9,6 +9,11 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 			url: '/',
 			templateUrl: 'js/templates/home.html',
 			controller: 'HomeCtrl'
+		})
+		.state('login', {
+			url: '/login',
+			templateUrl: 'js/templates/login.html',
+			controller: 'LoginCtrl'
 		});
 
 	$urlRouterProvider.otherwise('/');
