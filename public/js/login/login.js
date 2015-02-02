@@ -1,16 +1,17 @@
 (function () {
 	angular
 		.module('app.login')
-		.controller('LoginCtrl', ['$scope', 'auth', function ($scope, auth) {
+		.controller('LoginCtrl', ['$scope', 'auth', 'toaster', '$state', function ($scope, auth, toaster, $state) {
 			$scope.login = function () {
 				auth.login($scope.user.email, $scope.user.password).then(function (response) {
 					if (typeof response.user !== 'undefined') {
-						$scope.message = 'Bienvenido';
+						toaster.pop('success', 'Success', 'Successful login');
+						$state.go('dashboard');
 					} else if (typeof response.error !== 'undefined') {
-						$scope.message = response.error;
+						toaster.pop('error', 'Error', response.error);
 					}
 				}, function (error) {
-					console.log(error);
+					toaster.pop('error', 'System Error', 'Please try again later.');
 				});
 			};
 		}]);

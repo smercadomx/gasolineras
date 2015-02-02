@@ -14,6 +14,11 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 			url: '/login',
 			templateUrl: 'js/login/login.html',
 			controller: 'LoginCtrl'
+		})
+		.state('dashboard', {
+			url: '/admin',
+			templateUrl: 'js/dashboard/dashboard.html',
+			controller: 'DashboardCtrl'
 		});
 
 	$urlRouterProvider.otherwise('/');
