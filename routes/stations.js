@@ -1,8 +1,9 @@
-var express  = require('express'),
-	router   = express.Router(),
-	fs       = require('fs'),
-	mongoose = require('mongoose'),
-	Station  = mongoose.model('Station');
+var express          = require('express'),
+	paginate         = require('express-paginate'),
+	router           = express.Router(),
+	fs               = require('fs'),
+	mongoose         = require('mongoose'),
+	Station          = mongoose.model('Station');
 
 router.param('station', function(req, res, next, id) {
 	Station.findByNumber(id).then(function (station) {
@@ -17,6 +18,25 @@ router.param('station', function(req, res, next, id) {
 
 router.get('/stations/:station', function (req, res) {
 	res.json(req.station);
+});
+
+router.get('/stations', function (req, res, next) {
+	Station.paginate({}, req.query.page, req.query.limit,
+		function(err, pageCount, users) {
+		if (err) {
+			return next(err);
+		}
+
+		res.format({
+			json: function() {
+				res.json({
+					object: 'list',
+					hasMore: paginate.hasNextPages(req)(pageCount),
+					data: users
+				});
+			}
+		});
+	});
 });
 
 router.get('/nearstations', function (req, res) {

@@ -1,5 +1,6 @@
-var mongoose = require('mongoose'),
-	Q        = require('q');
+var mongoose         = require('mongoose'),
+	mongoosePaginate = require('mongoose-paginate'),
+	Q                = require('q');
 
 var StationSchema = new mongoose.Schema({
 	number: String,
@@ -12,6 +13,8 @@ var StationSchema = new mongoose.Schema({
 	address: String,
 	zipcode: {type: Number, default: 0}
 });
+
+StationSchema.plugin(mongoosePaginate);
 
 var isValidLatitude = function (latitude) {
 	return latitude >= -90 && latitude <= 90;

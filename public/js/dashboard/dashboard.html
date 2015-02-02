@@ -1,1 +1,16 @@
-Dashboard
+<table class="table table-striped">
+	<thead>
+		<th>No. Estacion</th>
+		<th>Direccion</th>
+		<th>Municipio</th>
+		<th>Latitude</th>
+		<th>Longitude</th>
+	</thead>
+	<tr ng-repeat="station in stations">
+		<td>{{station.number}}</td>
+		<td>{{station.address}}</td>
+		<td>{{station.municipality}}</td>
+		<td>{{station.location.coordinates[0]}}</td>
+		<td>{{station.location.coordinates[1]}}</td>
+	</tr>
+</table>
