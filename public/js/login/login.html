@@ -1,14 +1,14 @@
 <div class="row">
 	<div class="col-md-offset-3 col-md-6">
-		<form name="loginform" ng-submit="login()" novalidate>
+		<form name="loginform" ng-submit="vm.login()" novalidate>
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input class="form-control" type="email" ng-model="user.email" id="email" name="email" required>
+				<input class="form-control" type="email" ng-model="vm.user.email" id="email" name="email" required>
 				<p class="help-block" ng-show="loginform.email.$invalid && loginform.email.$dirty">Email invalido</p>
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input class="form-control" type="password" ng-model="user.password" id="password" name="password" required>
+				<input class="form-control" type="password" ng-model="vm.user.password" id="password" name="password" required>
 			</div>
 			<input ng-disabled="loginform.$invalid" class="btn btn-primary" type="submit" value="Login">
 		</form>

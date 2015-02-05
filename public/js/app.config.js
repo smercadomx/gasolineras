@@ -8,17 +8,20 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 		.state('home', {
 			url: '/',
 			templateUrl: 'js/home/home.html',
-			controller: 'HomeCtrl'
+			controller: 'HomeCtrl',
+			controllerAs: 'vm'
 		})
 		.state('login', {
 			url: '/login',
 			templateUrl: 'js/login/login.html',
-			controller: 'LoginCtrl'
+			controller: 'LoginCtrl',
+			controllerAs: 'vm'
 		})
 		.state('dashboard', {
 			url: '/admin',
 			templateUrl: 'js/dashboard/dashboard.html',
-			controller: 'DashboardCtrl'
+			controller: 'DashboardCtrl',
+			controllerAs: 'vm'
 		});
 
 	$urlRouterProvider.otherwise('/');
