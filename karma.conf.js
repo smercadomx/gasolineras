@@ -1,8 +1,3 @@
-// Karma configuration
-// http://karma-runner.github.io/0.12/config/configuration-file.html
-// Generated on 2015-02-04 using
-// generator-karma 0.8.3
-
 module.exports = function(config) {
 	'use strict';
 
@@ -14,20 +9,22 @@ module.exports = function(config) {
 		basePath: '.',
 
 		// testing framework to use (jasmine/mocha/qunit/...)
-		frameworks: ['jasmine'],
+		frameworks: ['jasmine', 'angular-filesort'],
 
 		// list of files / patterns to load in the browser
 		files: [
 			'public/bower_components/angular/angular.js',
 			'public/bower_components/angular-mocks/angular-mocks.js',
-			'public/js/app.js',
-			'public/js/app.config.js',
-			'public/js/home/home.module.js',
-			'public/js/home/home.js',
-			'public/js/login/login.module.js',
-			'public/js/login/login.js',
+			'public/bower_components/swiftclick/js/libs/swiftclick.js',
+			'public/js/**/*.js',
 			'tests/**/*.js'
 		],
+
+		angularFilesort: {
+			whitelist: [
+				'public/js/**/*.js'
+			]
+		},
 
 		// list of files / patterns to exclude
 		exclude: [],
@@ -50,24 +47,18 @@ module.exports = function(config) {
 		// Which plugins to enable
 		plugins: [
 			'karma-phantomjs-launcher',
-			'karma-jasmine'
+			'karma-jasmine',
+			'karma-angular-filesort'
 		],
 
 		// Continuous Integration mode
 		// if true, it capture browsers, run tests and exit
-		singleRun: false,
+		singleRun: true,
 
 		colors: true,
 
 		// level of logging
 		// possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
 		logLevel: config.LOG_INFO,
-
-		// Uncomment the following lines if you are using grunt's server to run the tests
-		// proxies: {
-		//   '/': 'http://localhost:9000/'
-		// },
-		// URL root prevent conflicts with the site root
-		// urlRoot: '_karma_'
 	});
 };
